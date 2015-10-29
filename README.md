@@ -75,7 +75,9 @@ Utilizei os seguintes princípios para elaborar minha abordagem: que as Clínica
 * O template das URLs possui placeholders para serem substituídos com as informações dos exames, por exemplo:
 
 	> Template: http://clini.ca/imagem/${imagemId}
+	
 	> Exame: { "id" : 1, "pacienteId" : 1, "clinicaId" : 1, "imagens" : [ 1, 2 ] }
+	
 	> Resultado: http://clini.ca/imagem/1
 	
 * Considerando que as imagens são responsabilidade do serviço da clínica e que o Sistema A apenas deve redirecionar, não me preocupei em validar se a imagem existe ou se o serviço está disponível. Desta forma, o cliente apenas recebe um link e, quando nele clica, o Sistema A faz um HTTP Temporary Redirect (Status 302) para o link montado a partir do template, saindo do domínio do Sistema A.
