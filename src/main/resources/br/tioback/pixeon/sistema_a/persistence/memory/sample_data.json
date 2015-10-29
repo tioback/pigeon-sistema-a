@@ -1,0 +1,97 @@
+{
+	"clinicas" : [
+		{
+			"id" : 1,
+			"nome" : "Clínica Um",
+			"uriTemplate" : "http://clinica1.com.br/imagens/${exameId}",
+			"imageByRequest" : false
+		},
+		{
+			"id" : 2,
+			"nome" : "Clínica Zwie",
+			"uriTemplate" : "http://www.clinica2.com/viewImage?exa=${exameId}&ind=${imagemId}",
+			"imageByRequest" : true
+		},
+		{
+			"id" : 3,
+			"nome" : "Clínica Three",
+			"uriTemplate" : "http://w1.clinica3.net/visualizador.php?${exameId}",
+			"imageByRequest" : false
+		},
+		{
+			"id" : 4,
+			"nome" : "Clínica Catre - Sem Integração",
+			"uriTemplate" : "http://clini.ca/vi?e=${exameId}&i=${imagemId}",
+			"imageByRequest" : true
+		}
+	],
+	"pacientes" : [
+		{ "id" : 1, "nome" : "Zé da Silva" },
+		{ "id" : 2, "nome" : "Tião Pereira" },
+		{ "id" : 3, "nome" : "Eva Ave" }
+	],
+	"exames" : [
+		{
+			"id" : 1,
+			"pacienteId" : 1,
+			"clinicaId" : 1,
+			"imagens" : [ 1, 2 ]
+		},
+		{
+			"id" : 2,
+			"pacienteId" : 1,
+			"clinicaId" : 1,
+			"imagens" : [ 1 ]
+		},
+		{
+			"id" : 3,
+			"pacienteId" : 1,
+			"clinicaId" : 2,
+			"imagens" : []
+		},
+		{
+			"id" : 4,
+			"pacienteId" : 1,
+			"clinicaId" : 3,
+			"imagens" : [ 1, 2, 3 ]
+		},
+		{
+			"id" : 5,
+			"pacienteId" : 1,
+			"clinicaId" : 3,
+			"imagens" : [ 1 ]
+		},
+		
+		{
+			"id" : 6,
+			"pacienteId" : 2,
+			"clinicaId" : 2,
+			"imagens" : []
+		},
+		{
+			"id" : 7,
+			"pacienteId" : 2,
+			"clinicaId" : 3,
+			"imagens" : [ 1 ]
+		},
+		{
+			"id" : 8,
+			"pacienteId" : 2,
+			"clinicaId" : 4,
+			"imagens" : []
+		},
+		
+		{
+			"id" : 9,
+			"pacienteId" : 3,
+			"clinicaId" : 2,
+			"imagens" : []
+		},
+		{
+			"id" : 10,
+			"pacienteId" : 3,
+			"clinicaId" : 4,
+			"imagens" : []
+		}
+	]
+}

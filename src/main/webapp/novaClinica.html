@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PIXEON: Sistema-a: Cadastro de Clínicas</title>
+	</head>
+	<body>
+		<h1>Nova Clínica</h1>
+		<form action="clinica" method="post">
+			<b>Nome: </b><input type="text" name="nome" /><br />
+			<b>Template da URI*: </b><input type="text" name="nome" />
+			<br />* Informe o template da URI do serviço de imagens, por exemplo: http://www.minhaurl.com/verImagens?idExame=${exameId}&amp;seqImagem=${imagemId}
+			<br /> Variáveis devem ser colocadas entre ${} (exemplo: ${pacienteId}). O sistema dispõe das seguintes variáveis:
+			<br /> imagemId, clinicaId, exameId e pacienteId. 
+			<br />
+			
+			<input type="submit" value="Salvar" />
+		</form>
+		<a href="index.html">Menu inicial</a>
+	</body>
+</html>

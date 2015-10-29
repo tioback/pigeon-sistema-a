@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PIXEON: Sistema-a: Cadastro de Paciente</title>
+		<script type="text/javascript">
+		
+		function getForm() {
+			return document.getElementById("formPaciente");
+		}
+		
+		function onclickSalvar() {
+			ajaxRequest("put");	
+		}
+		
+		function onclickExcluir() {
+			ajaxRequest("put");	
+		}
+
+		function ajaxRequest(method) {
+			var http = new XMLHttpRequest();
+			var url = "paciente";
+			
+			var pacienteId = document.getElementById("id").value;
+			var nome = document.getElementById("nome").value;
+			var params = "id=" + pacienteId + "&nome=" + nome;
+			http.open(method, url, true);
+
+			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			//http.setRequestHeader("Content-length", params.length);
+			http.setRequestHeader("Connection", "close");
+
+			http.onreadystatechange = function() {//Call a function when the state changes.
+			    if(http.readyState == 4 && http.status == 200) {
+			        alert(http.responseText);
+			    }
+			}
+			http.send(params);
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Novo Paciente</h1>
+		<form action="paciente" id="formPaciente">
+			<b>Id: </b><input type="text" name="id" readonly="readonly" />
+			<b>Nome: </b><input type="text" name="nome" />
+			<input type="button" value="Salvar" onclick="onclickSalvar();"/>
+			<input type="button" value="Excluir" onclick="onclickExcluir();"/>
+		</form>
+		<a href="index.html">Menu inicial</a>
+	</body>
+</html>
